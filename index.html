@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR</title>
+
+    <style>
+        div.wrapper {
+            width: 100%;
+            height: 0;
+            padding-bottom: 80%;
+            background-color: crimson;
+        }
+        .viewer {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+  <!-- Google Viewer -->
+    <script type="module" src="https://modelviewer.dev/dist/model-viewer.js"></script>
+    <!-- Spase Model -->
+    <div class="wrapper">
+        <model-viewer 
+            class="viewer"
+            ar 
+            auto-rotate 
+            camera-controls 
+            quick-look-browsers="safari chrome" 
+            src="/v2.glb" 
+            ios-src="/v2.usdz">
+        </model-viewer>
+    </div>
+</body>
+</html>
