@@ -6,12 +6,25 @@
     <title>AR</title>
 
     <style>
-        div.wrapper {
-            width: 100%;
-            height: 0;
-            padding-bottom: 80%;
-            background-color: crimson;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+
+        body {
+            padding-top: 100px;
+        }
+
+        .wrapper {
+            width: 100%;
+            height: 400px;
+            max-width: 600px;
+            background-color: crimson;
+            margin: 20px auto;
+            position: relative;
+        }
+
         .viewer {
             position: absolute;
             left: 0;
@@ -22,12 +35,38 @@
             width: 100%;
             height: 100%;
         }
+
+        h1 {
+            padding: 0 20px;
+        }
+
+        p {
+            padding: 0 20px;
+            display: block;
+        }
+
+        code {
+            background-color: lightgrey;
+            color: cornflowerblue;
+            padding: 0 10px;
+            border-radius: 4px;
+            line-height: 1;
+        }
+
+        hr {
+            border: 1px solid #cccccc;
+            margin: 10px 0 50px;
+        }
     </style>
+
+    <script type="module" src="https://modelviewer.dev/dist/model-viewer.js"></script>
 </head>
 <body>
-  <!-- Google Viewer -->
-    <script type="module" src="https://modelviewer.dev/dist/model-viewer.js"></script>
-    <!-- Spase Model -->
+  
+    <h1>3D formats DEMO</h1>
+    <hr>
+    <h1><code>GLB</code> and <code>USDZ</code> formats</h1>
+    <p>Loaded from USA Standart park's site</h5>
     <div class="wrapper">
         <model-viewer 
             class="viewer"
@@ -35,8 +74,68 @@
             auto-rotate 
             camera-controls 
             quick-look-browsers="safari chrome" 
-            src="/v2.glb" 
-            ios-src="/v2.usdz">
+            src="/sp.glb"
+            ios-src="/sp.usdz"
+            >
+        </model-viewer>
+    </div>
+
+    <hr>
+
+    <h1><code>GLTF</code> format</h1>
+    <p>Open source</p>
+    <div class="wrapper">
+        <model-viewer 
+            class="viewer"
+            ar 
+            auto-rotate 
+            camera-controls 
+            quick-look-browsers="safari chrome" 
+            src="/reflective-sphere.gltf"
+            >
+        </model-viewer>
+    </div>
+
+    <h1><code>GLB</code> format</h1>
+    <p>Open source</p>
+    <div class="wrapper">
+        <model-viewer 
+            class="viewer"
+            ar 
+            auto-rotate 
+            camera-controls 
+            quick-look-browsers="safari chrome" 
+            src="/astronaut.glb"
+            >
+        </model-viewer>
+    </div>
+
+    <h1><code>GLB</code> and <code>usdz</code> format</h1>
+    <p>Open source</p>
+    <div class="wrapper">
+        <model-viewer 
+            class="viewer"
+            ar 
+            auto-rotate 
+            camera-controls 
+            quick-look-browsers="safari chrome" 
+            src="/astronaut.glb"
+            ios-src="/astronaut.usdz"
+            >
+        </model-viewer>
+    </div>
+    <hr>
+    <h1>Client's <code>OBJ</code>  decoded to <code>glb</code> and <code>usdz</code></h1>
+    <div class="wrapper">
+        <model-viewer 
+            class="viewer"
+            ar 
+            auto-rotate 
+            camera-controls 
+            quick-look-browsers="safari chrome" 
+            src="/client-source.glb"
+            ios-src="/client-source.usdz"
+            >
         </model-viewer>
     </div>
 </body>
